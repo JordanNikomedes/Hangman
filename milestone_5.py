@@ -2,9 +2,9 @@ import random
 
 class Hangman:
 
-    def __init__(self, word_list):
+    def __init__(self, word_list, num_lives=5):
         self.word_list = word_list
-        self.num_lives = 5
+        self.num_lives = num_lives
         self.word = list(random.choice(self.word_list).lower())
         self.word_guessed = ['_']*len(self.word)
         self.list_of_guesses = []
@@ -12,19 +12,25 @@ class Hangman:
 
     def check_guess(self, guess):
         guess = guess.lower()
-
+        
         if guess in self.word:
-            print(f'Good guess!! {self.guess} is in the word')
+            
             for i, letter in enumerate(self.word):
-                if letter == self.guess:
+                if self.guess == letter:
                     self.word_guessed[i] = letter
+                    print(f'Good guess!! {self.guess} is in the word')
                     print(f'Your word so far is: {self.word_guessed}')
-                else:
+                    
+                elif self.guess != letter:
                     self.num_lives -= 1
-                    print(f'Sorry {letter} is not in the word')
-                    print(f'You have {self.num_lives} left')
+                    print(f'Sorry {self.guess} is not in the word')
+                    print(f'You have {self.num_lives} lives left')
+                    break
+                    
+                
 
             self.num_letters -= 1
+                
 
 
 
@@ -44,8 +50,7 @@ class Hangman:
 
 
 def play_game(word_list):
-    game = Hangman(word_list)
-    game.num_lives = 5
+    game = Hangman(word_list, num_lives=5)
 
     while True:
         if game.num_lives == 0:
