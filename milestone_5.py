@@ -3,8 +3,7 @@ import random
 
 
 class Hangman:
-""" This is my hangman class consisting of all the rules and functions
-for the game. I have initiated the attributes to use throughout the class  """
+""" Initiates the attributes throughout the class """
     def __init__(self, word_list, num_lives=5):
         self.word_list = word_list
         self.num_lives = num_lives
@@ -32,8 +31,7 @@ for the game. I have initiated the attributes to use throughout the class  """
                     break
                     
             self.num_letters -= 1
-""" In this method i checked if the letter is in the word using a for loop to break
-down the word and an if statement to judge what action to take """
+""" breaks down the word and loops through to check if correct """
                 
 
     def ask_for_input(self):
@@ -69,7 +67,7 @@ def play_game(word_list):
         elif game.num_lives > 0 and game.num_letters == 0:
             print('Congratulations, You won the game!!!')
             break
-""" This function is calling the hangman class with an if statement to end the game """
+""" calls the hangman class, end of game function """
 
 
 if __name__ == '__main__':
