@@ -4,7 +4,7 @@ import random
 
 class Hangman:
 """ This is my hangman class consisting of all the rules and functions
-for the game """
+for the game. I have initiated the attributes to use throughout the class  """
     def __init__(self, word_list, num_lives=5):
         self.word_list = word_list
         self.num_lives = num_lives
@@ -12,7 +12,7 @@ for the game """
         self.word_guessed = ['_']*len(self.word)
         self.list_of_guesses = []
         self.num_letters = len(set(self.word))
-""" I have initiated the attributes to use throughout the class """
+
 
     def check_guess(self, guess):
         guess = guess.lower()
@@ -75,5 +75,3 @@ def play_game(word_list):
 if __name__ == '__main__':
     word_list = ['apple', 'grapes', 'hello', 'people', 'cars']
     play_game(word_list)
-""" the if name = main method is made sure i can run this program straight
-from this python file """
