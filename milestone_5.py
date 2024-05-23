@@ -14,6 +14,7 @@ class Hangman:
 
 
     def check_guess(self, guess):
+    """ breaks down the word and loops through to check if correct """
         guess = guess.lower()
         
         if guess in self.word:
@@ -31,7 +32,7 @@ class Hangman:
                     break
                     
             self.num_letters -= 1
-""" breaks down the word and loops through to check if correct """
+
                 
 
     def ask_for_input(self):
@@ -53,6 +54,7 @@ class Hangman:
 
 
 def play_game(word_list):
+""" calls the hangman class, end of game function """
     game = Hangman(word_list, num_lives=5)
 
     while True:
@@ -67,7 +69,7 @@ def play_game(word_list):
         elif game.num_lives > 0 and game.num_letters == 0:
             print('Congratulations, You won the game!!!')
             break
-""" calls the hangman class, end of game function """
+
 
 
 if __name__ == '__main__':
