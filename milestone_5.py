@@ -1,11 +1,10 @@
 import random
 
-""" This is my hangman class consisting of all the rules and functions
-for the game """
+
 
 class Hangman:
-
-""" I have initiated the attributes to use throughout the class """
+""" This is my hangman class consisting of all the rules and functions
+for the game """
     def __init__(self, word_list, num_lives=5):
         self.word_list = word_list
         self.num_lives = num_lives
@@ -13,8 +12,8 @@ class Hangman:
         self.word_guessed = ['_']*len(self.word)
         self.list_of_guesses = []
         self.num_letters = len(set(self.word))
-""" In this method i checked if the letter is in the word using a for loop to break
-down the word and an if statement to judge what action to take """
+""" I have initiated the attributes to use throughout the class """
+
     def check_guess(self, guess):
         guess = guess.lower()
         
@@ -33,6 +32,8 @@ down the word and an if statement to judge what action to take """
                     break
                     
             self.num_letters -= 1
+""" In this method i checked if the letter is in the word using a for loop to break
+down the word and an if statement to judge what action to take """
                 
 
     def ask_for_input(self):
@@ -52,7 +53,7 @@ down the word and an if statement to judge what action to take """
                 self.list_of_guesses.append(self.guess)
                 break
 
-""" This function is calling the hangman class with an if statement to end the game """
+
 def play_game(word_list):
     game = Hangman(word_list, num_lives=5)
 
@@ -68,9 +69,11 @@ def play_game(word_list):
         elif game.num_lives > 0 and game.num_letters == 0:
             print('Congratulations, You won the game!!!')
             break
+""" This function is calling the hangman class with an if statement to end the game """
 
-""" the if name = main method is made sure i can run this program straight
-from this python file """
+
 if __name__ == '__main__':
     word_list = ['apple', 'grapes', 'hello', 'people', 'cars']
     play_game(word_list)
+""" the if name = main method is made sure i can run this program straight
+from this python file """
