@@ -52,9 +52,9 @@ class Hangman:
                 
 
     def ask_for_input(self):
-        """ This method entices the user to enter a letter.
-            it loops through to make sure the input is valid.
-            once valid the check guess methid is called.
+        """ Asks user to input a valid letter, loops through to check if
+            the letter is already guessed. Once checked the check guess method
+            is called and is added to list of guesses. 
         """
         while True:
             self.guess = input('Please enter a letter: ').lower()
