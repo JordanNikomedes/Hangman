@@ -2,9 +2,18 @@ import random
 
 
 
-class Hangman:
-""" Initiates the attributes throughout the class """
+class Hangman: 
+    """ Hangman game that emulates the physical game """
     def __init__(self, word_list, num_lives=5):
+        """ initiates the attributes throughout the class
+
+        Parameters
+        ----------
+        word_list : list
+            a list of words randomized by the program 
+        num_lives : int
+            the number of lives a user has to guess the word correctly, by default 5
+        """
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(self.word_list).lower()
@@ -14,7 +23,14 @@ class Hangman:
 
 
     def check_guess(self, guess):
-    """ breaks down the word and loops through to check if correct """
+        """ The check guess method breaks down the word and checks if the guess
+        is equal to one of the letters inside the word.
+
+        Parameters
+        ----------
+        guess : string
+            this is inputed by the user which loops through to check what statement it meets.
+        """
         guess = guess.lower()
         
         if guess in self.word:
@@ -54,7 +70,13 @@ class Hangman:
 
 
 def play_game(word_list):
-""" calls the hangman class, end of game function """
+    """ calls the hangman class and loops through to judge whether to end the game.
+
+    Parameters
+    ----------
+    word_list : list
+        a list is passed to initiate the start of the game
+    """
     game = Hangman(word_list, num_lives=5)
 
     while True:
